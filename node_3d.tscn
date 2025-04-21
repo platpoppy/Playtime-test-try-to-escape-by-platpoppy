@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://dbtf4ja634yp3"]
+[gd_scene load_steps=3 format=3 uid="uid://f3m18pxngild"]
+
+[ext_resource type="PackedScene" uid="uid://wipogv674odr" path="res://Player/player.tscn" id="1_5kja2"]
+[ext_resource type="PackedScene" uid="uid://cu72dk6n7aaco" path="res://Item/Grabpack/grabpack_item.tscn" id="2_7pleg"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5kja2")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 1.9, -4.8, 14.2)
+floor_constant_speed = true
+start_with_grabpack = false
+grabpack_version = 1
+defualt_hand = 2
+flare_hand = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95, -4.9, 14.2)
+use_collision = true
+size = Vector3(13, 0.2, 8.6)
+
+[node name="Grabpack Item" parent="." instance=ExtResource("2_7pleg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88633, -4.26596, 11.3513)
+play_collect_jingle = true
